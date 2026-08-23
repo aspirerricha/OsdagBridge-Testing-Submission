@@ -1,37 +1,30 @@
 # OsdagBridge Testing Notes
 
 ## Test 1: Structure Type Dropdown
-- Action: Checked available options in Structure Type dropdown
-- Input: N/A
-- Result: Only "Highway Bridge" selectable; other option greyed out, no tooltip/explanation
-- Status: Minor issue (Low severity)
+I checked the available options in Structure Type dropdown
+ Only "Highway Bridge" is selectable, "other" option greyed out, no tooltip/explanation
+Status: Minor issue (Low severity)
 
 ## Test 2: Span Field Decimal Precision
-- Action: Entered Span = 30.123456789
-- Expected: Value accepted as-is, or rounding indicated
-- Actual: Silently rounded to 30.12, no message shown
-- Status: Minor issue (Low severity)
+While testing different span values I entered a long decimal value like Span = 30.123456789
+The model silently rounded the value to 30.12 without informing the user regarding the change in value(leading to less accuracy)
+Status: Minor issue (Low severity)
 
 ## Test 3: Graphics/Database/Help Menus
-- Action: Clicked each menu, then clicked each dropdown option
-- Expected: Corresponding action triggered
-- Actual: Dropdown opens, closes properly on click, but no option performs any action
-- Status: Bug (Medium severity) — filed as GitHub Issue #[number]
+I clicked each menu, then clicked each dropdown option. But no action was triggered on clicking any of the options under  the dropdown.
+Filed as GitHub Issue #[53]
 
 ## Test 4: Custom Material Properties
-- Action: Entered [exact values you used] for girder/stiffener/deck properties in Additional Inputs
-- Expected: Custom values retained and reflected in design output
-- Actual: [what actually happened — retained correctly / reverted to default / etc.]
-- Status: [Pass / Bug]
+I entered No. of girders=4 and the application automatically updated the girder spacing to 10.97.The 3D Model updated accordingly and matched the summary panel.
 
-## Test 5: Multi-Run Stability (Run 1)
-- Action: Span 23.0 → changed to 30.0, clicked Design
-- Result: [3D view updated correctly? summary panel matched? any lag/crash?]
+## Test 5a: Multi-Run Stability (Run 1)-Example1
+- Action: Span 23.0, clicked Design
+- Result: 3D view updated correctly and matched the summary panel
 
-## Test 5b: Multi-Run Stability (Run 2)
-- Action: Carriageway Width changed to [value]
-- Result: [...]
+## Test 5b: Multi-Run Stability (Run 2)-Example2
+- Action: Changed Span to 30.0 CarriageWay Width to 17.
+- Result:3D view updated correctly and matched the summary panel
 
-## Test 5c: Multi-Run Stability (Run 3)
-- Action: Skew Angle changed to [value]
-- Result: [...]
+## Test 5c: Multi-Run Stability (Run 3)-Example3
+- Action: Skew Angle changed to 10.0 and span to 40.0
+- Result: 3D view updated correctly and matched the summary panel
