@@ -1,0 +1,37 @@
+# OsdagBridge Testing Notes
+
+## Test 1: Structure Type Dropdown
+- Action: Checked available options in Structure Type dropdown
+- Input: N/A
+- Result: Only "Highway Bridge" selectable; other option greyed out, no tooltip/explanation
+- Status: Minor issue (Low severity)
+
+## Test 2: Span Field Decimal Precision
+- Action: Entered Span = 30.123456789
+- Expected: Value accepted as-is, or rounding indicated
+- Actual: Silently rounded to 30.12, no message shown
+- Status: Minor issue (Low severity)
+
+## Test 3: Graphics/Database/Help Menus
+- Action: Clicked each menu, then clicked each dropdown option
+- Expected: Corresponding action triggered
+- Actual: Dropdown opens, closes properly on click, but no option performs any action
+- Status: Bug (Medium severity) — filed as GitHub Issue #[number]
+
+## Test 4: Custom Material Properties
+- Action: Entered [exact values you used] for girder/stiffener/deck properties in Additional Inputs
+- Expected: Custom values retained and reflected in design output
+- Actual: [what actually happened — retained correctly / reverted to default / etc.]
+- Status: [Pass / Bug]
+
+## Test 5: Multi-Run Stability (Run 1)
+- Action: Span 23.0 → changed to 30.0, clicked Design
+- Result: [3D view updated correctly? summary panel matched? any lag/crash?]
+
+## Test 5b: Multi-Run Stability (Run 2)
+- Action: Carriageway Width changed to [value]
+- Result: [...]
+
+## Test 5c: Multi-Run Stability (Run 3)
+- Action: Skew Angle changed to [value]
+- Result: [...]
